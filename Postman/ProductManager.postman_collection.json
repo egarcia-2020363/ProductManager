@@ -1,0 +1,914 @@
+{
+	"info": {
+		"_postman_id": "97e426ab-c44b-4864-b184-bb062ee6e8d0",
+		"name": "ProductManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951917"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "addAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Enmanuel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Garcia",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "egarciaadmin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "egarcia@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "125489654722",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Enmanuel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Garcia",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "enmagarcia",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "egarcia@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "125489654722",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginClient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"client_token\", data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "enmagarcia",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"admin_token\", data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "egarciaadmin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Enma",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Baran",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "eadmin3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "egarciaadmin@kinal.org",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "125489654755",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/saveUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"saveUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/user/getAllUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/user/getUser/67af5f2bcab3051554dd81b8",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"getUser",
+								"67af5f2bcab3051554dd81b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "EnmaA",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "BaranA",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "egarciaA@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12548965448",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/user/updateUser/67af5adfcab3051554dd81b3",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"updateUser",
+								"67af5adfcab3051554dd81b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "privateUpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "EnmaA",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "BaranA",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "egarciaA@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12548965448",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/user/privateUpdateUser/67af5f2bcab3051554dd81b8",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"privateUpdateUser",
+								"67af5f2bcab3051554dd81b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "privateDeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/user/privateDeleteUser/67af8215630b26f0404f3964",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"privateDeleteUser",
+								"67af8215630b26f0404f3964"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "bsnerhI34#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/user/deleteUser/67b168c8683b434b2b462b63",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"user",
+								"deleteUser",
+								"67b168c8683b434b2b462b63"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ice Cream",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67b28dc9839ca50ac917b6cd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/product/createProduct",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ice CreamNew",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "descriptionNew",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67b28dc9839ca50ac917b6cd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/product/updateProduct/67b291ddb6c737c5835d387e",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"updateProduct",
+								"67b291ddb6c737c5835d387e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/product/getAllProducts",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"getAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProduct",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/product/getProduct/67b291ddb6c737c5835d387e",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"getProduct",
+								"67b291ddb6c737c5835d387e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/product/deleteProduct/67b291ddb6c737c5835d387e",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"deleteProduct",
+								"67b291ddb6c737c5835d387e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Frozen",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/category/createCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"category",
+								"createCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3632/v1/category/getAllCategories",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"category",
+								"getAllCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3632/v1/category/getCategory/67b28da2839ca50ac917b6ca",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"category",
+								"getCategory",
+								"67b28da2839ca50ac917b6ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Fast food",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/category/updateCategory/67b28da2839ca50ac917b6ca",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"category",
+								"updateCategory",
+								"67b28da2839ca50ac917b6ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/category/deleteCategory/67b28dc9839ca50ac917b6cd",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"category",
+								"deleteCategory",
+								"67b28dc9839ca50ac917b6cd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
