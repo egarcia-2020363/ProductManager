@@ -62,24 +62,23 @@ export const saveUser = async(req, res)=> {
 export const login = async(req, res)=>{
     try {
         //Capturar los datos body
-        let { username, password } = req.body
+        let { userLoggin, password } = req.body
         //Vaalidar que el usuario exista
-        let user = await User.findOne({username}) //findOne({username}) = ({username})
-        
-        if(user.status === false) return res.status(403).send(
-            {
-                success: false,
-                message: 'Invalid User'
-            }
-        )
-
+        let user = await User.findOne({
+            $or: [
+                {email: userLoggin},
+                {username: userLoggin}
+            ]
+        }) //findOne({username}) = ({username})
+       
         //Verificar que la contrasena coincida
         if(user && await checkPassword(user.password, password)){
             let loggedUser = {
                 uid: user._id,
                 name: user.name,
                 username: user.username,
-                role: user.role
+                role: user.role,
+                status: user.status
             }
 
             let token = await generateJwt(loggedUser)
@@ -93,8 +92,7 @@ export const login = async(req, res)=>{
             )
         }
         return res.status(400).send({message: 'Wrong email or password'})
-        //PENDIENTE: generar el token
-        //Responder al usuario
+
     } catch (e) {
         console.error(e)
         return res.status(500).send({message: 'General error with login function'})

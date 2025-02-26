@@ -157,7 +157,7 @@ export const update = async(req, res)=>{
         const {role, status} = req.user
 
         if (role !== 'ADMIN' || status === false){
-            return res.status(403).send({message: 'You cant update this user'})
+            return res.status(403).send({message: 'You cant update user'})
         }
 
         const { id } = req.params
@@ -172,6 +172,13 @@ export const update = async(req, res)=>{
                 }
             ) 
         } 
+        
+        if(user.role === 'ADMIN') return res.status(403).send(
+            {
+                success: false,
+                message: 'You cant update another ADMIN'
+            }
+        )
 
         if (name !== undefined && name.trim() === "") {
             name = user.name

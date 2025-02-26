@@ -1,5 +1,7 @@
 import Product from './product.model.js'
 import Category from '../categories/category.model.js'
+import { objectIdValid } from '../../helpers/db.validators.js'
+import mongoose from 'mongoose'
 
 export const getAll = async (req, res) => {
     try {
@@ -125,11 +127,52 @@ export const update = async (req, res) => {
 
 export const getTopSelling = async (req, res) => {
     try {
+
+        const { status } = req.user
+
+        if(status === false) return res.status(403).send(
+            {
+                success: false,
+                message: 'You are not a valid user'
+            }
+        )
+
         const products = await Product.find({ status: true }).sort({ sold: -1 })
         if (products.length === 0) {
             return res.status(404).send({ success: false, message: 'No top-selling products found' })
         }
         return res.send({ success: true, message: 'Top-selling products found', products })
+    } catch (e) {
+        console.error(e)
+        return res.status(500).send({ success: false, message: 'General error', error: e })
+    }
+}
+
+export const getByParameter = async (req, res) => {
+    try {
+
+        const { status } = req.user
+        const { filter } = req.body
+        if(status === false) return res.status(403).send(
+            {
+                success: false,
+                message: 'You are not a valid user'
+            }
+        )
+
+        let filterCategory = mongoose.Types.ObjectId.isValid(filter) ? new mongoose.Types.ObjectId(filter) : null
+
+        const products = await Product.find({
+            $or: [
+                { name: filter},
+                filterCategory ? { category: filterCategory} : null
+            ].filter(Boolean)
+        })
+
+        if (products.length === 0) {
+            return res.status(404).send({ success: false, message: 'No products found' })
+        }
+        return res.send({ success: true, message: `Products find through ${filter}: `, products })
     } catch (e) {
         console.error(e)
         return res.status(500).send({ success: false, message: 'General error', error: e })

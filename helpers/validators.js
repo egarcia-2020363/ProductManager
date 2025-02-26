@@ -25,7 +25,7 @@ export const saveUserValidator = [
 ]
 
 export const loginValidator = [
-    body('username', 'Username is required').notEmpty(),
+    body('userLoggin', 'Username or email is required').notEmpty(),
     body('password', 'Password is required').notEmpty(),
     validateErrors
 ]
