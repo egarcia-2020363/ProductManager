@@ -1,6 +1,6 @@
 //Modelo de Categoria
 
-import { Schema, model } from "mongoose";
+import { Schema, model } from "mongoose"
 
 const categorySchema = Schema(
     {
