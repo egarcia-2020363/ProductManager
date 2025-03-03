@@ -18,6 +18,7 @@ export const createBill = async (req, res) => {
             }
             total += item.quantity * item.product.price
             item.product.stock -= item.quantity
+            item.product.sold += item.quantity
             await item.product.save()
         }
         
@@ -72,7 +73,7 @@ export const getUserBills = async (req, res) => {
 export const getBillDetails = async (req, res) => {
     try {
         const { id } = req.params
-        const bill = await Bill.findById(id).populate('items.product user')
+        const bill = await Bill.findById(id).populate('items.product user.username')
         if (!bill) {
             return res.status(404).send({ message: 'Bill not found' })
         }
@@ -97,18 +98,17 @@ export const updateBill = async (req, res) => {
         }
         
         const { id } = req.params
-        const { status } = req.body
-        let items = req.body.items
+        const { status, items } = req.body
 
-        if (!Array.isArray(items)) {
-            items = Object.values(items)
+        if (!Array.isArray(items) || items.length === 0) {
+            return res.status(400).send({ message: "Items array is required and must not be empty" })
         }
 
         const bill = await Bill.findById(id).populate('items.product')
         if (!bill) {
             return res.status(404).send({ message: 'Bill not found' })
         }
-        
+
         for (let item of bill.items) {
             const product = await Product.findById(item.product._id)
             if (product) {
@@ -116,10 +116,10 @@ export const updateBill = async (req, res) => {
                 await product.save()
             }
         }
-        
+
         let total = 0
         let updatedItems = []
-        
+
         for (let item of items) {
             const product = await Product.findById(item.product)
             if (!product || product.stock < item.quantity) {
@@ -131,8 +131,10 @@ export const updateBill = async (req, res) => {
                 )
             }
             
+            product.price = item.price
             total += item.quantity * product.price
             product.stock -= item.quantity
+            product.sold += item.quantity
             await product.save()
             
             updatedItems.push({
@@ -141,11 +143,11 @@ export const updateBill = async (req, res) => {
                 price: product.price
             })
         }
-        
+
         bill.items = updatedItems
         bill.total = total
         if (status) bill.status = status
-        
+
         await bill.save()
         return res.send(
             {

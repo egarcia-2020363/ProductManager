@@ -23,7 +23,9 @@ export const addToCart = async (req, res) => {
 
         const alreadyItem = cart.items.findIndex(item => item.product.toString() === productId)
         if (alreadyItem > -1) {
-            cart.items[alreadyItem].quantity += quantity
+            cart.items[alreadyItem].quantity += Number(quantity)
+            if(cart.items[alreadyItem].quantity > product.stock) 
+                return res.status(400).send({ message: "Product not available or insufficient stock" })
         } else {
             cart.items.push({ product: productId, quantity })
         }
@@ -84,7 +86,7 @@ export const clearCart = async (req, res) => {
         cart.items = []
         await cart.save()
 
-        return res.send({ success: true, message: "Cart cleared after purchase" })
+        return res.send({ success: true, message: "Cart cleared" })
     } catch (e) {
         console.error(e)
         return res.status(500).send({ message: "General error", error: e })

@@ -39,7 +39,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "125489654722",
+									"value": "55996624",
 									"type": "text"
 								},
 								{
@@ -104,7 +104,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "125489654722",
+									"value": "48759862",
 									"type": "text"
 								},
 								{
@@ -156,7 +156,7 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "username",
+									"key": "userLoggin",
 									"value": "enmagarcia",
 									"type": "text"
 								},
@@ -202,7 +202,7 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "username",
+									"key": "userLoggin",
 									"value": "egarciaadmin",
 									"type": "text"
 								},
@@ -279,7 +279,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "125489654755",
+									"value": "78481254",
 									"type": "text"
 								},
 								{
@@ -340,7 +340,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3632/v1/user/getUser/67af5f2bcab3051554dd81b8",
+							"raw": "localhost:3632/v1/user/getUser/67c521ff580e44dccecb05c8",
 							"host": [
 								"localhost"
 							],
@@ -349,7 +349,7 @@
 								"v1",
 								"user",
 								"getUser",
-								"67af5f2bcab3051554dd81b8"
+								"67c521ff580e44dccecb05c8"
 							]
 						}
 					},
@@ -386,13 +386,13 @@
 								},
 								{
 									"key": "phone",
-									"value": "12548965448",
+									"value": "78962351",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3632/v1/user/updateUser/67af5adfcab3051554dd81b3",
+							"raw": "localhost:3632/v1/user/updateUser/67c521ff580e44dccecb05c8",
 							"host": [
 								"localhost"
 							],
@@ -401,7 +401,7 @@
 								"v1",
 								"user",
 								"updateUser",
-								"67af5adfcab3051554dd81b3"
+								"67c521ff580e44dccecb05c8"
 							]
 						}
 					},
@@ -423,12 +423,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "EnmaA",
+									"value": "EnmaE",
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "BaranA",
+									"value": "BaranE",
 									"type": "text"
 								},
 								{
@@ -442,14 +442,14 @@
 									"type": "text"
 								},
 								{
-									"key": "role",
+									"key": "uRole",
 									"value": "ADMIN",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3632/v1/user/privateUpdateUser/67af5f2bcab3051554dd81b8",
+							"raw": "localhost:3632/v1/user/privateUpdateUser/67c5234daf344c65e04100ed",
 							"host": [
 								"localhost"
 							],
@@ -458,7 +458,7 @@
 								"v1",
 								"user",
 								"privateUpdateUser",
-								"67af5f2bcab3051554dd81b8"
+								"67c5234daf344c65e04100ed"
 							]
 						}
 					},
@@ -476,7 +476,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3632/v1/user/privateDeleteUser/67af8215630b26f0404f3964",
+							"raw": "localhost:3632/v1/user/privateDeleteUser/67c5234daf344c65e04100ed",
 							"host": [
 								"localhost"
 							],
@@ -485,7 +485,7 @@
 								"v1",
 								"user",
 								"privateDeleteUser",
-								"67af8215630b26f0404f3964"
+								"67c5234daf344c65e04100ed"
 							]
 						}
 					},
@@ -513,7 +513,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3632/v1/user/deleteUser/67b168c8683b434b2b462b63",
+							"raw": "localhost:3632/v1/user/deleteUser/67c52246580e44dccecb05cd",
 							"host": [
 								"localhost"
 							],
@@ -522,7 +522,7 @@
 								"v1",
 								"user",
 								"deleteUser",
-								"67b168c8683b434b2b462b63"
+								"67c52246580e44dccecb05cd"
 							]
 						}
 					},
@@ -549,22 +549,22 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "ice Cream",
+									"value": "Ice Cream Tub",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "description",
+									"value": "Creamy vanilla ice cream, 1L.",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "10",
+									"value": "4.99",
 									"type": "text"
 								},
 								{
 									"key": "stock",
-									"value": "20",
+									"value": "180",
 									"type": "text"
 								},
 								{
@@ -605,33 +605,33 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "ice CreamNew",
+									"value": "ice Cream",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "descriptionNew",
+									"value": "Creamy chocolate ice cream, 1L.",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "15",
+									"value": "6.99",
 									"type": "text"
 								},
 								{
 									"key": "stock",
-									"value": "25",
+									"value": "150",
 									"type": "text"
 								},
 								{
 									"key": "category",
-									"value": "67b28dc9839ca50ac917b6cd",
+									"value": "67b29126839ca50ac917b6da",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3632/v1/product/updateProduct/67b291ddb6c737c5835d387e",
+							"raw": "localhost:3632/v1/product/updateProduct/67c5263b810eb5885d47b285",
 							"host": [
 								"localhost"
 							],
@@ -640,7 +640,7 @@
 								"v1",
 								"product",
 								"updateProduct",
-								"67b291ddb6c737c5835d387e"
+								"67c5263b810eb5885d47b285"
 							]
 						}
 					},
@@ -684,7 +684,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3632/v1/product/getProduct/67b291ddb6c737c5835d387e",
+							"raw": "localhost:3632/v1/product/getProduct/67c5263b810eb5885d47b285",
 							"host": [
 								"localhost"
 							],
@@ -693,7 +693,7 @@
 								"v1",
 								"product",
 								"getProduct",
-								"67b291ddb6c737c5835d387e"
+								"67c5263b810eb5885d47b285"
 							]
 						}
 					},
@@ -711,7 +711,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3632/v1/product/deleteProduct/67b291ddb6c737c5835d387e",
+							"raw": "localhost:3632/v1/product/deleteProduct/67c5263b810eb5885d47b285",
 							"host": [
 								"localhost"
 							],
@@ -720,7 +720,72 @@
 								"v1",
 								"product",
 								"deleteProduct",
-								"67b291ddb6c737c5835d387e"
+								"67c5263b810eb5885d47b285"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTopSelling",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/product/getTopSelling",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"getTopSelling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByFilter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "filter",
+									"value": "ice Cream",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/product/getByParameter",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"product",
+								"getByParameter"
 							]
 						}
 					},
@@ -747,12 +812,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Frozen",
+									"value": "Home & Kitchen",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "description",
+									"value": "Home essentials.",
 									"type": "text"
 								}
 							]
@@ -824,7 +889,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3632/v1/category/getCategory/67b28da2839ca50ac917b6ca",
+							"raw": "localhost:3632/v1/category/getCategory/67c52727810eb5885d47b298",
 							"host": [
 								"localhost"
 							],
@@ -833,7 +898,7 @@
 								"v1",
 								"category",
 								"getCategory",
-								"67b28da2839ca50ac917b6ca"
+								"67c52727810eb5885d47b298"
 							]
 						}
 					},
@@ -855,12 +920,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Fast food",
+									"value": "Fast FOOD",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "new description",
+									"value": "Quick and tasty snacks",
 									"type": "text"
 								}
 							]
@@ -903,6 +968,251 @@
 								"category",
 								"deleteCategory",
 								"67b28dc9839ca50ac917b6cd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/cart/getCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"cart",
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "67c52574810eb5885d47b272",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "28",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3632/v1/cart/addToCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"cart",
+								"addToCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/cart/removeFromCart/67c52574810eb5885d47b272",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"cart",
+								"removeFromCart",
+								"67c52574810eb5885d47b272"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/cart/clearCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"cart",
+								"clearCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "createBill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/bill/createBill",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"bill",
+								"createBill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserBills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/bill/getUserBills",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"bill",
+								"getUserBills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBillDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{client_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3632/v1/bill/getBillDetails/67c53e8f50cca0a9048ee996",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"bill",
+								"getBillDetails",
+								"67c53e8f50cca0a9048ee996"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBill",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"PENDING\",\r\n    \"items\": [\r\n        {\r\n            \"product\": \"67c52574810eb5885d47b272\",\r\n            \"quantity\": 2,\r\n            \"price\": 48.50\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3632/v1/bill/updateBill/67c53e8f50cca0a9048ee996",
+							"host": [
+								"localhost"
+							],
+							"port": "3632",
+							"path": [
+								"v1",
+								"bill",
+								"updateBill",
+								"67c53e8f50cca0a9048ee996"
 							]
 						}
 					},
